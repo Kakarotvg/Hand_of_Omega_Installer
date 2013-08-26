@@ -8,14 +8,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URL;
-import java.net.URLConnection;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -31,17 +24,19 @@ public class Installwindow extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
-    final URI uri = new URI("https://www.facebook.com/AetherMod?ref=br_tf");
+    final URI uri = new URI("http://files.minecraftforge.net");
     final String uria = "http://www.minecraftforum.net/topic/1850853-162hand-of-omega/";
 
-    JLabel label, label1, label2, label3, label4, label5, label6, label7, label8, label9, label10;
+    JLabel label, label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11, label12, label13, label14, label15, label16, label17, label18, label19, label20, label21, label22;
     ButtonGroup group;
     JRadioButton b1, b2;
-    JButton b, c, d;
+    JButton b, c, d, e;
     static JProgressBar progressBar;
 
     public Installwindow() throws Exception {
         super("Minecraft Aether/other mods install Tutorial");
+
+        this.pack();
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(4, 4, 4, 4);
@@ -50,7 +45,7 @@ public class Installwindow extends JFrame implements ActionListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setBackground(Color.gray);
 
-        JPanel p = new JPanel();
+        JPanel p = new JPanel(new GridBagLayout());
         p.setBackground(Color.lightGray);
         JPanel p2 = new JPanel(new GridBagLayout());
         p2.setLayout(new BoxLayout(p2, BoxLayout.Y_AXIS));
@@ -74,7 +69,7 @@ public class Installwindow extends JFrame implements ActionListener {
         b2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Thats Too bad. Try again, if it still doesn't work then contact Jacob Connet.");
+                JOptionPane.showMessageDialog(null, "Thats Too bad. Try again, if it still doesn't work then contact Kakarotvg.");
             }
         });
 
@@ -91,7 +86,7 @@ public class Installwindow extends JFrame implements ActionListener {
             }
         });
 
-        c = new JButton("Aether");
+        c = new JButton("Minecraft Forge");
         c.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -112,87 +107,62 @@ public class Installwindow extends JFrame implements ActionListener {
             }
         });
 
-        d = new JButton("Hand of Omega");
+        d = new JButton("Install");
         d.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Thread(new thread1()).start();
-                URL url; // represents the location of the file we want to dl.
-                URLConnection con; // represents a connection to the url we want
-                                   // to dl.
-                DataInputStream dis; // input stream that will read data from
-                                     // the file.
-                FileOutputStream fos; // used to write data from inut stream to
-                                      // file.
-                byte[] fileData; // byte aray used to hold data from downloaded
-                                 // file.
-                try {
-                    url = new URL("http://download1174.mediafire.com/wf1ssu07qfzg/7s8azqd66ayqc33/Hand+of+Omega.zip");
-                    con = url.openConnection(); // open the url connection.
-                    dis = new DataInputStream(con.getInputStream()); // get a
-                                                                     // data
-                                                                     // stream
-                                                                     // from the
-                                                                     // url
-                                                                     // connection.
-                    fileData = new byte[con.getContentLength()]; // determine
-                                                                 // how many
-                                                                 // byes the
-                                                                 // file size is
-                                                                 // and make
-                                                                 // array big
-                                                                 // enough to
-                                                                 // hold the
-                                                                 // data
-                    for (int x = 0; x < fileData.length; x++) { // fill byte
-                                                                // array with
-                                                                // bytes from
-                                                                // the data
-                                                                // input stream
-                        fileData[x] = dis.readByte();
-                    }
-                    dis.close(); // close the data input stream
-                    fos = new FileOutputStream(new File(System.getProperty("user.home") + "/Library/Application Support/aether/mods/Hand_of_Omega.jar")); // create
-                    // an
 
-                    // object
-                    // representing
-                    // the
-                    // file we
-                    // want to
-                    // save
-                    fos.write(fileData); // write out the file we want to save.
-                    fos.close(); // close the output stream writer
-                }
-                catch (MalformedURLException m) {
-                    System.out.println(m);
-                }
-                catch (IOException io) {
-                    System.out.println(io);
-                }
+                Download.DownloadFiles();
 
             }
         });
 
+        e = new JButton("Install to Desktop");
+        e.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Download.manualDownload();
+            }
+        });
+
         // labels
-        label = new JLabel("Welcome to aether/hand of omega Installation tutorial");
+        label = new JLabel("Hand_of_Omega_Installer");
         label1 = new JLabel("---------------------------------------------------------");
-        label2 = new JLabel("Aether Installation");
-        label3 = new JLabel("First: download the Aether Launcher(see button below)");
-        label4 = new JLabel("Second: place the Aether launcher .jar file anywhere on your computer and double click it.");
-        label5 = new JLabel("Third: Log in and play the aether.");
-        label6 = new JLabel("---------------------------------------------------------");
-        label7 = new JLabel("Hand of Omega installation with aether");
-        label8 = new JLabel("Download Hand of Omega(See Button Below)");
-        label9 = new JLabel("Check to see that Hand of Omega is downlaoded and placed in mods folder of aether folder.");
-        label10 = new JLabel("Run the aether launcher.  Enjoy!!!");
+        label2 = new JLabel("Windows Installation");
+        label3 = new JLabel("First: download the MinecraftForge Installer(See Button Below)");
+        label4 = new JLabel("Second: run the MinecraftForge installer and direct it to your .minecraft folder(should be already done.)");
+        label5 = new JLabel("Third: Close the Installer after installation has finished.");
+        label6 = new JLabel("Fourth: To install Hand of Omega, click the install button at the bottom of the window.");
+        label7 = new JLabel("Fifth: Run minecraft and enjoy the hand of omega mod.  If installation doesn't work click the(download to desktop) button");
+        label8 = new JLabel("---------------------------------------------------------");
+        label9 = new JLabel("MAC Installation");
+        label10 = new JLabel("First: download the MinecraftForge Installer(See Button Below)");
+        label11 = new JLabel("Second: run the MinecraftForge installer and direct it to your minecraft folder(should be already done.)");
+        label12 = new JLabel("Third: Close the Installer after installation has finished.");
+        label13 = new JLabel("Fourth: To install Hand of Omega, click the install button at the bottom of the window.");
+        label14 = new JLabel("Fifth: Run minecraft and enjoy the hand of omega mod.  If installation doesn't work click the(download to desktop) button");
+        label15 = new JLabel("---------------------------------------------------------");
+        label16 = new JLabel("Linux Installation");
+        label17 = new JLabel("First: download the MinecraftForge Installer(See Button Below)");
+        label18 = new JLabel("Second: run the MinecraftForge installer and direct it to your .minecraft(should be already done.)");
+        label19 = new JLabel("Third: Close the Installer after installation has finished.");
+        label20 = new JLabel("Fourth: To install Hand of Omega, click the install button at the bottom of the window.");
+        label21 = new JLabel("Fifth: Run minecraft and enjoy the hand of omega mod.  If installation doesn't work click the(download to desktop) button");
+        label22 = new JLabel("---------------------------------------------------------");
 
         progressBar = new JProgressBar(0, 100);
 
-        progressBar.setBounds(10, 10, 280, 20);
+        progressBar.setBounds(10, 10, 100, 20);
 
-        p.add(b);
-        p.add(c);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        p.add(e, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        p.add(b, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        p.add(d, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -229,12 +199,46 @@ public class Installwindow extends JFrame implements ActionListener {
         p2.add(label10, gbc);
         gbc.gridx = 0;
         gbc.gridy = 11;
-        p2.add(c, gbc);
+        p2.add(label11, gbc);
         gbc.gridx = 0;
         gbc.gridy = 12;
-        p2.add(d, gbc);
+        p2.add(label12, gbc);
         gbc.gridx = 0;
         gbc.gridy = 13;
+        p2.add(label13, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 14;
+        p2.add(label14, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 15;
+        p2.add(label15, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 16;
+        p2.add(label16, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 17;
+        p2.add(label17, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 18;
+        p2.add(label18, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 19;
+        p2.add(label19, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 20;
+        p2.add(label20, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 21;
+        p2.add(label21, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 21;
+        p2.add(label22, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 23;
+        p2.add(c, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 25;
         p2.add(progressBar);
 
         p3.add(b1, gbc);
@@ -245,24 +249,6 @@ public class Installwindow extends JFrame implements ActionListener {
         add(p, BorderLayout.SOUTH);
         add(p2, BorderLayout.NORTH);
         add(p3, BorderLayout.CENTER);
-
-    }
-
-    public static class thread1 implements Runnable {
-
-        @Override
-        public void run() {
-            for (int i = 0; i <= 100; i++) {
-                progressBar.setValue(i);
-                progressBar.repaint();
-                try {
-                    Thread.sleep(50);
-                }
-                catch (InterruptedException err) {
-                }
-            }
-
-        }
 
     }
 
