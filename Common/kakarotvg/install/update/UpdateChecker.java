@@ -1,4 +1,4 @@
-package kakarotvg.install;
+package kakarotvg.install.update;
 
 import java.awt.BorderLayout;
 import java.awt.Desktop;

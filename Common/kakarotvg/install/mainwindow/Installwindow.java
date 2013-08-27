@@ -1,4 +1,4 @@
-package kakarotvg.install;
+package kakarotvg.install.mainwindow;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -20,6 +20,8 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JRadioButton;
 
+import kakarotvg.install.download.Download;
+
 public class Installwindow extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
@@ -31,7 +33,7 @@ public class Installwindow extends JFrame implements ActionListener {
     ButtonGroup group;
     JRadioButton b1, b2;
     JButton b, c, d, e;
-    static JProgressBar progressBar;
+    public static JProgressBar progressBar;
 
     public Installwindow() throws Exception {
         super("Minecraft Aether/other mods install Tutorial");

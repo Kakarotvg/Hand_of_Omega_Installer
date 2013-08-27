@@ -1,4 +1,4 @@
-package kakarotvg.install;
+package kakarotvg.install.update;
 
 import java.io.InputStream;
 import java.net.URL;

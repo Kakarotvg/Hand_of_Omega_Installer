@@ -1,4 +1,6 @@
-package kakarotvg.install;
+package kakarotvg.install.download;
+
+import kakarotvg.install.mainwindow.Installwindow;
 
 public class ProgressbarThread implements Runnable {
 
