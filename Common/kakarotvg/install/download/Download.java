@@ -8,7 +8,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
-
 public class Download {
 
     String OS = null;
@@ -26,7 +25,7 @@ public class Download {
         byte[] fileData; // byte aray used to hold data from downloaded
                          // file.
         try {
-            url = new URL("http://download1174.mediafire.com/e7gqmmkcq1ng/7s8azqd66ayqc33/Hand+of+Omega.zip");
+            url = new URL("https://github.com/Kakarotvg/Hand_of_Omega/releases/download/1.1.2_alpha/Hand_of_Omega.jar");
             con = url.openConnection(); // open the url connection.
             dis = new DataInputStream(con.getInputStream()); // get a
                                                              // data
@@ -100,7 +99,7 @@ public class Download {
         byte[] fileData; // byte aray used to hold data from downloaded
                          // file.
         try {
-            url = new URL("http://download1174.mediafire.com/e7gqmmkcq1ng/7s8azqd66ayqc33/Hand+of+Omega.zip");
+            url = new URL("https://github.com/Kakarotvg/Hand_of_Omega/releases/download/1.1.2_alpha/Hand_of_Omega.jar");
             con = url.openConnection(); // open the url connection.
             dis = new DataInputStream(con.getInputStream()); // get a
                                                              // data

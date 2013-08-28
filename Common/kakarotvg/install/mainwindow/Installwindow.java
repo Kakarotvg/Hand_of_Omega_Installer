@@ -128,7 +128,7 @@ public class Installwindow extends JFrame implements ActionListener {
         });
 
         // labels
-        label = new JLabel("Hand_of_Omega_Installer");
+        label = new JLabel("Hand_of_Omega_Installer:" + " Don't forget to delete the handofomega config file in the config folder before updating.");
         label1 = new JLabel("---------------------------------------------------------");
         label2 = new JLabel("Windows Installation");
         label3 = new JLabel("First: download the MinecraftForge Installer(See Button Below)");
