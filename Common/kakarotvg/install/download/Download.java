@@ -25,7 +25,7 @@ public class Download {
         byte[] fileData; // byte aray used to hold data from downloaded
                          // file.
         try {
-            url = new URL("https://github.com/Kakarotvg/Hand_of_Omega/releases/download/1.1.2_alpha/Hand_of_Omega.jar");
+            url = new URL("https://github.com/Kakarotvg/Hand_of_Omega/releases/download/1.1.3/Hand_of_Omega_1.1.3.jar");
             con = url.openConnection(); // open the url connection.
             dis = new DataInputStream(con.getInputStream()); // get a
                                                              // data
@@ -53,17 +53,17 @@ public class Download {
             dis.close(); // close the data input stream
 
             if (System.getProperty("os.name").startsWith("Windows")) {
-                fos = new FileOutputStream(new File(System.getProperty("user.home") + "/AppData/Roaming/.minecraft/mods/Hand_of_Omega.jar")); // create
+                fos = new FileOutputStream(new File(System.getProperty("user.home") + "/AppData/Roaming/.minecraft/mods/Hand_of_Omega_1.1.3.jar")); // create
                 fos.write(fileData); // write out the file we want to save.
                 fos.close(); // close the output stream writer
             }
             if (System.getProperty("os.name").startsWith("Mac OS X")) {
-                fos = new FileOutputStream(new File(System.getProperty("user.home") + "/Library/Application Support/minecraft/mods/Hand_of_Omega.jar")); // create
+                fos = new FileOutputStream(new File(System.getProperty("user.home") + "/Library/Application Support/minecraft/mods/Hand_of_Omega_1.1.3.jar")); // create
                 fos.write(fileData); // write out the file we want to save.
                 fos.close(); // close the output stream writer
             }
             if (System.getProperty("os.name").startsWith("Linux")) {
-                fos = new FileOutputStream(new File(System.getProperty("user.home") + "/.minecraft/mods/Hand_of_Omega.jar")); // create
+                fos = new FileOutputStream(new File(System.getProperty("user.home") + "/.minecraft/mods/Hand_of_Omega_1.1.3.jar")); // create
                 fos.write(fileData); // write out the file we want to save.
                 fos.close(); // close the output stream writer
             }
@@ -99,7 +99,7 @@ public class Download {
         byte[] fileData; // byte aray used to hold data from downloaded
                          // file.
         try {
-            url = new URL("https://github.com/Kakarotvg/Hand_of_Omega/releases/download/1.1.2_alpha/Hand_of_Omega.jar");
+            url = new URL("https://github.com/Kakarotvg/Hand_of_Omega/releases/download/1.1.3/Hand_of_Omega_1.1.3.jar");
             con = url.openConnection(); // open the url connection.
             dis = new DataInputStream(con.getInputStream()); // get a
                                                              // data
@@ -127,17 +127,17 @@ public class Download {
             dis.close(); // close the data input stream
 
             if (System.getProperty("os.name").startsWith("Windows")) {
-                fos = new FileOutputStream(new File(System.getProperty("user.home") + "/Desktop/Hand_of_Omega.jar")); // create
+                fos = new FileOutputStream(new File(System.getProperty("user.home") + "/Desktop/Hand_of_Omega_1.1.3.jar")); // create
                 fos.write(fileData); // write out the file we want to save.
                 fos.close(); // close the output stream writer
             }
             if (System.getProperty("os.name").startsWith("Mac OS X")) {
-                fos = new FileOutputStream(new File(System.getProperty("user.home") + "/Desktop/Hand_of_Omega.jar")); // create
+                fos = new FileOutputStream(new File(System.getProperty("user.home") + "/Desktop/Hand_of_Omega_1.1.3.jar")); // create
                 fos.write(fileData); // write out the file we want to save.
                 fos.close(); // close the output stream writer
             }
             if (System.getProperty("os.name").startsWith("Linux")) {
-                fos = new FileOutputStream(new File(System.getProperty("user.home") + "/Desktop/Hand_of_Omega.jar")); // create
+                fos = new FileOutputStream(new File(System.getProperty("user.home") + "/Desktop/Hand_of_Omega_1.1.3.jar")); // create
                 fos.write(fileData); // write out the file we want to save.
                 fos.close(); // close the output stream writer
             }

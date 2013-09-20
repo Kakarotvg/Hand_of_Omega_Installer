@@ -11,7 +11,7 @@ public class Main {
         for (int i = 0; i < 1; i++) {
 
             try {
-                if (Double.parseDouble(Update.getLatestVersion()) > 0.2) {
+                if (Double.parseDouble(Update.getLatestVersion()) > 0.3) {
                     new UpdateChecker(Update.getWhatsNew());
                 }
                 else {
